@@ -57,7 +57,7 @@ RUN set -ex \
     && chmod u+x /usr/local/bin/composer
 # php extension:phpy
 RUN set -ex \
-    && apk add python3 \
+    && apk add python3-dev \
     && python -V \
     && which python \
     && cd /tmp \
