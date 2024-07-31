@@ -59,6 +59,7 @@ RUN set -ex \
 RUN set -ex \
     && apk add python3 \
     && python -V \
+    && which python \
     && cd /tmp \
     && curl -SL "https://github.com/swoole/phpy/archive/refs/tags/${PHPY_VERSION}.tar.gz" -o phpy.tar.gz \
     && tar -zxf phpy.tar.gz \
