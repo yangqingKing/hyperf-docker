@@ -54,8 +54,9 @@ RUN set -ex \
     && echo "swoole.use_shortname = 'Off'" >> /etc/php${PHP_BUILD_VERSION}/conf.d/50_swoole.ini \
     # install composer
     && wget -nv -O /usr/local/bin/composer https://github.com/composer/composer/releases/download/${COMPOSER_VERSION}/composer.phar \
-    && chmod u+x /usr/local/bin/composer \
-    # php extension:phpy
+    && chmod u+x /usr/local/bin/composer
+# php extension:phpy
+RUN set -ex \
     && apk add python3 \
     && cd /tmp \
     && curl -SL "https://github.com/swoole/phpy/archive/refs/tags/${PHPY_VERSION}.tar.gz" -o phpy.tar.gz \
@@ -64,8 +65,9 @@ RUN set -ex \
     && phpize${PHP_BUILD_VERSION} \
     && ./configure \
     && make install \
-    && echo "extension=phpy.so" > /etc/php${PHP_BUILD_VERSION}/conf.d/50_phpy.ini \
-    # ---------- clear works ----------
+    && echo "extension=phpy.so" > /etc/php${PHP_BUILD_VERSION}/conf.d/50_phpy.ini 
+# ---------- clear works ----------
+RUN set -ex \
     && apk del .build-deps \
     && rm -rf /var/cache/apk/* /tmp/* /usr/share/man /usr/local/bin/php* \
     # php info
