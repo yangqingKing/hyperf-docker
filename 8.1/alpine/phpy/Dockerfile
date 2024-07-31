@@ -56,7 +56,7 @@ RUN set -ex \
     && wget -nv -O /usr/local/bin/composer https://github.com/composer/composer/releases/download/${COMPOSER_VERSION}/composer.phar \
     && chmod u+x /usr/local/bin/composer \
     # php extension:phpy
-    && apk add python3
+    && apk add python3 \
     && cd /tmp \
     && curl -SL "https://github.com/swoole/phpy/archive/refs/tags/${PHPY_VERSION}.tar.gz" -o phpy.tar.gz \
     && tar -zxf phpy.tar.gz \
