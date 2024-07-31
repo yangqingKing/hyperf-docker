@@ -65,7 +65,7 @@ RUN set -ex \
     && tar -zxf phpy.tar.gz \
     && cd phpy-${PHPY_VERSION} \
     && phpize \
-    && ./configure \
+    && ./configure --with-python-dir=/usr \
     && make install \
     && echo "extension=phpy.so" > /etc/php${PHP_BUILD_VERSION}/conf.d/50_phpy.ini 
 # ---------- clear works ----------
