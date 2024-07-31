@@ -58,11 +58,12 @@ RUN set -ex \
 # php extension:phpy
 RUN set -ex \
     && apk add python3 \
+    && python -V \
     && cd /tmp \
     && curl -SL "https://github.com/swoole/phpy/archive/refs/tags/${PHPY_VERSION}.tar.gz" -o phpy.tar.gz \
     && tar -zxf phpy.tar.gz \
     && cd phpy-${PHPY_VERSION} \
-    && phpize${PHP_BUILD_VERSION} \
+    && phpize \
     && ./configure \
     && make install \
     && echo "extension=phpy.so" > /etc/php${PHP_BUILD_VERSION}/conf.d/50_phpy.ini 
