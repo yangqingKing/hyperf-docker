@@ -13,7 +13,7 @@ LABEL maintainer="Hyperf Developers <group@hyperf.io>" version="1.0" license="MI
 
 ARG SW_VERSION
 ARG COMPOSER_VERSION
-ARG PHP_BUILD_VERSION="8.1"
+ARG PHP_BUILD_VERSION="81"
 
 ##
 # ---------- env settings ----------
