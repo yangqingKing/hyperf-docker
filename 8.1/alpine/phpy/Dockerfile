@@ -5,7 +5,7 @@
 # @contact  group@hyperf.io
 # @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
 
-ARG ALPINE_VERSION
+ARG ALPINE_VERSION="3.18"
 
 FROM hyperf/hyperf:8.1-alpine-v${ALPINE_VERSION}-base
 
