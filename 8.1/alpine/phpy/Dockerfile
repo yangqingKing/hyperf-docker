@@ -67,7 +67,11 @@ RUN set -ex \
     && ./configure --with-python-dir=/usr \
     && make install \
     && echo "extension=phpy.so" > /etc/php${PHP_BUILD_VERSION}/conf.d/50_phpy.ini \
+    && cd /tmp \
+    && wget https://bootstrap.pypa.io/get-pip.py \
+    && python get-pip.py \
     && rm -rf /tmp/phpy* \
+    && rm -f get-pip.py \
     # ---------- clear works ----------
     && apk del .build-deps \
     && rm -rf /var/cache/apk/* /tmp/* /usr/share/man /usr/local/bin/php* \
