@@ -70,6 +70,7 @@ RUN set -ex \
     && cd /tmp \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
+    && pip -V \
     && rm -rf /tmp/phpy* \
     && rm -f get-pip.py \
     # ---------- clear works ----------
